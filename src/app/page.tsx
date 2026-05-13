@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import TestimonialCard from '@/components/TestimonialCard';
+import { AnimatedSection } from '@/components/AnimatedWrappers';
 import { testimonials } from '@/data/testimonials';
 import { siteMetadata } from '@/data/siteMetadata';
 
@@ -61,76 +64,129 @@ const highlights = [
 export default function Home() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <HeroSection
         title="Patanjal Yoga Dham"
         location="Arya Nagar, Haridwar"
         tagline={siteMetadata.tagline}
         ctaText="Explore Programs"
         ctaHref="/programs"
+        badge="Haridwar&apos;s Gateway to Enlightenment"
+        secondaryCta={{ text: 'Watch Journey', href: '/gallery' }}
       />
 
-      {/* Introduction Section */}
-      <section className="bg-amber-50 py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-amber-900">
-            Welcome to Patanjal Yoga Dham
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-amber-800">
-            Nestled in the spiritual heart of Haridwar, Patanjal Yoga Dham is
-            dedicated to preserving and sharing the authentic teachings of yoga.
-            Our mission is to guide individuals on a journey of physical
-            well-being, mental clarity, and inner peace through time-honoured
-            practices rooted in Patanjali&apos;s Yoga Sutras.
-          </p>
-        </div>
-      </section>
-
-      {/* Highlights Section — Key Offerings */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-amber-900">
-            What We Offer
-          </h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl bg-white p-8 text-center shadow-sm ring-1 ring-amber-100"
-              >
-                <span className="text-4xl" role="img" aria-hidden="true">
-                  {item.icon}
-                </span>
-                <h3 className="mt-4 text-xl font-semibold text-amber-900">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-amber-700">{item.description}</p>
-              </div>
+      {/* Features */}
+      <section className="py-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimatedSection>
+            <p className="label-md text-center" style={{ color: 'var(--color-primary)' }}>
+              Our Offerings
+            </p>
+            <h2 className="headline-xl text-center mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              Holistic Healing for Mind and Soul
+            </h2>
+          </AnimatedSection>
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {highlights.map((item, i) => (
+              <AnimatedSection key={item.title} variant="from-bottom" delay={i * 150}>
+                <div
+                  className="rounded-3xl p-10 text-center elevation-1 soft-lift h-full"
+                  style={{ background: 'white', border: '1px solid var(--color-outline-variant)' }}
+                >
+                  <span className="text-5xl" role="img" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <h3 className="mt-6 text-xl font-semibold" style={{ color: 'var(--color-on-surface)' }}>
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 body-md" style={{ color: 'var(--color-on-surface-variant)' }}>
+                    {item.description}
+                  </p>
+                  <Link
+                    href="/programs"
+                    className="mt-5 inline-block text-sm font-semibold"
+                    style={{ color: 'var(--color-primary)' }}
+                  >
+                    Learn more →
+                  </Link>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-amber-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-amber-900">
-            What Our Students Say
-          </h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <TestimonialCard
-                key={t.id}
-                quote={t.quote}
-                author={t.author}
-                role={t.role}
-              />
+      {/* Asymmetric Spirit Section */}
+      <section className="py-[120px]" style={{ background: 'var(--color-surface-container)' }}>
+        <div className="mx-auto max-w-[1280px] px-8 grid gap-16 lg:grid-cols-2 items-center">
+          <AnimatedSection variant="from-left" className="relative">
+            <Image
+              src="/images/hero/yoga-terrace.png"
+              alt="Yoga practice overlooking the Ganges"
+              width={600}
+              height={500}
+              className="rounded-3xl w-full object-cover"
+            />
+            {/* Decorative blurred circle */}
+            <div
+              className="pulse-glow absolute -bottom-8 -left-8 h-32 w-32 rounded-full blur-3xl -z-10"
+              style={{ background: 'var(--color-primary-container)', opacity: 0.3 }}
+            />
+          </AnimatedSection>
+          <AnimatedSection variant="from-right" delay={200}>
+            <p className="label-md" style={{ color: 'var(--color-primary)' }}>Our Philosophy</p>
+            <h2 className="headline-xl mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              Awaken Your Spirit by the Sacred Waters
+            </h2>
+            <div className="mt-8 space-y-4">
+              {[
+                'Authentic teachings rooted in Patanjali\'s Yoga Sutras',
+                'Holistic approach to body, mind, and spirit',
+                'Experienced gurus with decades of practice',
+                'Serene setting near the holy Ganges',
+              ].map((point) => (
+                <div key={point} className="flex items-start gap-3">
+                  <span style={{ color: 'var(--color-primary-container)' }}>✓</span>
+                  <p className="body-md" style={{ color: 'var(--color-on-surface-variant)' }}>{point}</p>
+                </div>
+              ))}
+            </div>
+            <Link
+              href="/about"
+              className="mt-8 inline-block rounded-full px-8 py-3.5 text-sm font-semibold text-white"
+              style={{ background: 'var(--color-primary-container)' }}
+            >
+              Our Philosophy
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimatedSection>
+            <p className="label-md text-center" style={{ color: 'var(--color-primary)' }}>
+              Testimonials
+            </p>
+            <h2 className="headline-xl text-center mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              What Our Students Say
+            </h2>
+          </AnimatedSection>
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <AnimatedSection key={t.id} variant="scale-up" delay={i * 150}>
+                <TestimonialCard
+                  quote={t.quote}
+                  author={t.author}
+                  role={t.role}
+                />
+              </AnimatedSection>
             ))}
           </div>
         </div>

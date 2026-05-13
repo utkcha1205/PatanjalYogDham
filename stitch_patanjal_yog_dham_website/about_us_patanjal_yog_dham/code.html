@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb95f",
+                    "background": "#fff8f4",
+                    "on-secondary-container": "#6a6341",
+                    "on-background": "#221a12",
+                    "on-secondary-fixed": "#201c02",
+                    "secondary-fixed-dim": "#d1c79d",
+                    "surface": "#fff8f4",
+                    "surface-container-highest": "#f0e0d1",
+                    "on-primary-container": "#613b00",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#001e2d",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#855300",
+                    "surface-dim": "#e7d7c9",
+                    "primary-container": "#f59e0b",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#004966",
+                    "primary-fixed": "#ffddb8",
+                    "inverse-on-surface": "#feeedf",
+                    "secondary-container": "#eae0b5",
+                    "surface-variant": "#f0e0d1",
+                    "inverse-primary": "#ffb95f",
+                    "on-surface-variant": "#534434",
+                    "tertiary": "#00658b",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#c5e7ff",
+                    "surface-container-low": "#fff1e5",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#d8c3ad",
+                    "on-tertiary-fixed-variant": "#004c6a",
+                    "on-surface": "#221a12",
+                    "on-secondary-fixed-variant": "#4d4727",
+                    "surface-container-high": "#f5e6d7",
+                    "inverse-surface": "#382f25",
+                    "tertiary-fixed-dim": "#7fd0ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#2a1700",
+                    "surface-bright": "#fff8f4",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ede3b8",
+                    "primary": "#855300",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#867461",
+                    "on-primary-fixed-variant": "#653e00",
+                    "secondary": "#665f3d",
+                    "tertiary-container": "#1abdff",
+                    "surface-container": "#fbebdd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding-mobile": "64px",
+                    "container-max": "1280px",
+                    "gutter": "32px",
+                    "base": "8px",
+                    "stack-sm": "16px",
+                    "section-padding-desktop": "120px",
+                    "stack-md": "32px",
+                    "stack-lg": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Geist Sans"],
+                    "body-lg": ["Geist Sans"],
+                    "label-md": ["Geist Sans"],
+                    "headline-lg": ["Geist Sans"],
+                    "display-lg": ["Geist Sans"],
+                    "body-md": ["Geist Sans"],
+                    "headline-xl": ["Geist Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f4;
+            color: #221a12;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-8 py-4">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">
+                Patanjal Yoga Dham
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Programs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform">
+                Join Now
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-8 text-center">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] mb-4 block">OUR JOURNEY</span>
+<h1 class="font-display-lg text-display-lg text-on-background mb-8 max-w-4xl mx-auto">Sanctuary of Ancient Wisdom &amp; Modern Clarity</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Discover the roots of Patanjal Yog Dham, where the sacred waters of the Ganges meet the disciplined path of classical yoga.</p>
+</div>
+</section>
+<!-- History & Mission Asymmetric Layout -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop">
+<div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-7 relative">
+<div class="absolute -top-12 -left-12 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[240px] text-primary">spa</span>
+</div>
+<div class="space-y-stack-md relative z-10">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">The Legacy of Haridwar</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Founded on the banks of the holy river, Patanjal Yog Dham was established to preserve the purity of Vedic traditions while making them accessible to the contemporary seeker. For decades, our ashram has served as a bridge between the spiritual heights of the Himalayas and the everyday lives of practitioners worldwide.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+<div class="p-8 bg-surface-container rounded-3xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">history_edu</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Our Roots</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tracing back centuries of oral tradition, revitalized for the 21st century seeker.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-3xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">verified</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Our Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">To empower individuals through authentic yogic science and mental clarity.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-5">
+<div class="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-primary opacity-10"></div>
+<img alt="Spiritual Haridwar" class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" data-alt="A serene landscape of Haridwar during the golden hour, showing the sacred Ganges river with ancient temple architecture in the background. The lighting is warm and ethereal, casting a spiritual glow over the ripples of the water. The overall aesthetic is one of profound peace, grounded in traditional Indian heritage with a modern, high-key photographic clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_DNaCkPahVZoHWmu63bJL-j61fIgiJDzrernZKjY0EPNpNpVtMykZRqhi9SUfdcdc4ThxrCxOFB-eCzsz5oo9H3DTZLxnZ6YEg6vKut7REIrBynKGS5rYZSc5BtIiGZB5anfRAjFf8uxPobCzqocLmOUaYX16qWOVCf-aikT_RT8PBsNO86lIRJAdy0pGJFz_ylOZAPMUi-x_5noeEnz3B1m9AopVmDK83ehc9FMFL0bew8XCzhPrCAfbN1pHUe5E-dN6HixlzLcG"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Facilities - Breath Principle Focus -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] mb-4 block">THE SPACE</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Designed for Stillness</h2>
+</div>
+<div class="max-w-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Every corner of our ashram is intentionally crafted to support your practice, from sound-treated halls to gardens of silence.</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-3xl shadow-xl">
+<img alt="Yoga Hall Interior" class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1vhM9eTFIXJvlCqo_ESvD03agvmVZPNqWivBZxnadCBmBp7k3FDfGG5wZVie-f2Qp8vjL14zoZ4bKNLoQAMGxKpQKPAwLrEvN6fbRgzzMg0nsVA48DNjOA3GQ_Qtouedfbx5XtT74PfdU8C2pro039mZeglQPxbPKDE0hyYWE1mpHV1h90IiewKaMM0nSJj8qJ_-UCArNkPt1gFBzHP4yyiyhQ98Uyfqrti1TOfZzwodh6EdtlvSa5jLPAg8OaBSVu4GPgbnNewi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-12 left-12 text-white">
+<h3 class="font-headline-xl text-headline-xl mb-2">Main Dhyana Hall</h3>
+<p class="font-body-lg text-body-lg opacity-90 max-w-lg">A vast, sun-drenched space designed for collective meditation and hatha yoga practice.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Teachers - Bento Inspired Cards -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-16">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] mb-4 block">WISDOM KEEPERS</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Guided by Masters</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Guru Card -->
+<div class="md:col-span-8 flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-surface-container overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+<div class="md:w-1/2 aspect-square md:aspect-auto">
+<img alt="Guru Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV8uK-nE99cmVyPbX9yelCW9INhhd7GWFV8Xomfuv5G2NWWtS9BDgKKKS5A-DrPbrRxAyNZ7bkctEK7bfL1WuC84Skrik-ru867C0UHoHnrJFHdFvUOMk6f3u9NmfwCaANpmTXXYd8hY6_RRysi7n8XTap3V9JSD9Y-lvzdGRxuFsyyfPHzRGv5r3PgX87fNy_VsJGpmoKqoMqS_TcOyMNGqH9ylhIIkKZCy-nuCN_qUAdra4JfMKfIg8wXDbClX6BHdG1ulLYQdfA"/>
+</div>
+<div class="md:w-1/2 p-12 flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Acharya Shanti Prakash</h3>
+<p class="font-label-md text-label-md text-primary mb-6">HEAD OF ASHRAM</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 italic">"Yoga is not a workout, it is a work-in. Our practice here is to remove the obstacles to the inner light that already exists within you."</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary-container">self_improvement</span>
+<span class="material-symbols-outlined text-primary-container">psychology</span>
+<span class="material-symbols-outlined text-primary-container">nature</span>
+</div>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-4 p-10 bg-secondary-container rounded-3xl flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 shadow-sm">
+<div>
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-secondary-container mb-4">Parampara</h4>
+<p class="font-body-md text-body-md text-on-secondary-container/80">Our lineage traces directly back to the foundational principles of Patanjali, ensuring you receive authentic knowledge.</p>
+</div>
+<div class="pt-8 border-t border-on-secondary-container/10">
+<span class="font-label-md text-label-md">LEARN OUR METHOD</span>
+</div>
+</div>
+<!-- Supporting Teachers Grid -->
+<div class="md:col-span-4 p-8 bg-surface-container-high rounded-3xl group cursor-pointer shadow-sm hover:shadow-md transition-all">
+<div class="mb-6 rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Teacher" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A portrait of a young, serene yoga instructor with a gentle smile, captured in a bright studio filled with natural light. The background is minimalist with warm wooden textures and soft shadows. The overall feel is modern yet deeply rooted in mindful tranquility, reflecting a professional and welcoming spiritual guidance atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANZOcEaLWN879hQ0EGI-X19pyBOoyNJEp_9j4NCWpPoHo_letmUsvmPg6WGzFuEUy5Yq_q2v9A57X5iJ6m4IXVlFilZiFhn9LhCwDSrdXVIPY03RBPNv1G7st5_dLHbtnm7X4ZRbAt-cxs0S0ld2MFJYPFby3Nn0Pc_xcwcnjI0gABYSgjdNaIbwnx5KBXRQlfjjuB-TZKI-vJXQKsk55HT-t3QAjWb9QEWmIcSxJMJwjGxgFv59e8ysXttpR98syRu7lGuK8IVaXr"/>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-1">Dr. Ananya Rao</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">VEDIC PHILOSOPHY</p>
+</div>
+<div class="md:col-span-4 p-8 bg-surface-container-high rounded-3xl group cursor-pointer shadow-sm hover:shadow-md transition-all">
+<div class="mb-6 rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Teacher" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A male yoga practitioner in a serene, high-key outdoor setting near the Ganges river. He is wearing simple, earth-toned clothing and has a calm, focused expression. The lighting is soft morning sun, creating a spiritual and enlightened atmosphere that emphasizes mental clarity and physical grace. The color palette is composed of warm creams and amber accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVOX73N3Cso0Krpt8ElqBvB7HJmh2VVagtHTnff9XrQiuHLx31hQ6Sd7wFNyDPmp9bit_cjDVNXD-G2cvZCLNDqD-93NdawfY7lTLNyIwe3wWeuZKghb-O1OtjuiweowmdDZHIgSVWascJhHSy7KTYj4Tp7_T7JvaBGAOKzPjCnuxkBLBN7dlZ2AAc1l1UIW0DlXk5oHam21K2NnO686YZctDxySrmB9wIi5XyHlZG4dQqOEhu8eE6NHGuWa7K8iSPicDRHFZZUzl7"/>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-1">Yogi Devdas</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">HATHA SPECIALIST</p>
+</div>
+<div class="md:col-span-4 p-8 bg-surface-container-high rounded-3xl group cursor-pointer shadow-sm hover:shadow-md transition-all">
+<div class="mb-6 rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Practice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up artistic shot of a yoga teacher's hands in a Gyan mudra gesture. The background is a soft-focus ashram garden with dappled sunlight through green leaves. The lighting is warm and ethereal, highlighting the texture of the skin and the delicate movement of the hands. The mood is one of deep meditation and ancestral wisdom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLxN_oZtH4bITuDg9np81RUrgO5LrrxC7QtyLqZhHbBTM5I6btNDnvorTPdqSaM3CRwAvDellr83WCZncFTHhLNCVmSsjm4pFB2fdYo7tvFwU2cmJEitTkl23vH0OGMYDgMmJE8omO8vmVt_52pSe7Scu_yLerr9G4EVp0BgYxCrZu0sczzrx4vp7ibHAZ7GffGw6BhmR7w4iOyokuQSzHLm2UBzye1oXHh1XcJQJZuo6yr1rtGJit1BzlPrkOPJr0S3YeNMNpGt0V"/>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-1">Sadhvi Mira</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">MEDITATION &amp; BREATH</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-primary text-white text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-[600px] font-thin">all_inclusive</span>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<h2 class="font-display-lg text-display-lg mb-8">Begin Your Transformation</h2>
+<p class="font-body-lg text-body-lg mb-12 max-w-2xl mx-auto opacity-90">Whether you are a beginner or an advanced practitioner, our gates are open for your spiritual awakening in the heart of Haridwar.</p>
+<button class="bg-white text-primary px-10 py-4 rounded-full font-label-md text-label-md hover:shadow-2xl transition-all hover:scale-105 active:scale-95">
+                    VIEW UPCOMING RETREATS
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-surface-container dark:bg-surface-container-high">
+<div class="max-w-[1280px] mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<div class="space-y-4">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim">Patanjal Yog Dham</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Connecting ancient Vedic wisdom with modern life in the sacred city of Haridwar.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-2">Navigation</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-semibold" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Programs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact</a>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-2">Connect</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary text-xl">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary text-xl">camera</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-8">© 2024 Patanjal Yog Dham. Serenity in Haridwar.</p>
+</div>
+</div>
+</footer>
+</body></html>

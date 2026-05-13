@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import type { GalleryImage } from '@/lib/types';
 import GalleryGrid from '@/components/GalleryGrid';
 import Lightbox from '@/components/Lightbox';
+import AnimateIn from '@/components/AnimateIn';
 import { galleryImages } from '@/data/gallery';
 
 export default function GalleryPageClient() {
@@ -11,24 +13,40 @@ export default function GalleryPageClient() {
 
   return (
     <>
-      <section className="bg-amber-50 py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-amber-900">
-            Gallery
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-amber-800">
-            A glimpse into life at Patanjal Yoga Dham — our sessions, facility,
-            and community events.
-          </p>
+      {/* Hero */}
+      <section className="py-[120px] text-center">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimateIn>
+            <p className="label-md" style={{ color: 'var(--color-primary)' }}>Visual Journey</p>
+            <h1 className="display-lg mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              Moments of Serenity
+            </h1>
+            <p className="body-lg mt-6 max-w-2xl mx-auto" style={{ color: 'var(--color-on-surface-variant)' }}>
+              A glimpse into life at Patanjal Yoga Dham — our sessions, facility,
+              and community events.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Gallery Masonry */}
+      <section className="pb-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimateIn variant="from-bottom">
           <GalleryGrid
             images={galleryImages}
             onImageClick={(image) => setSelectedImage(image)}
           />
+          </AnimateIn>
+          <div className="mt-12 text-center">
+            <Link
+              href="/contact"
+              className="text-sm font-semibold"
+              style={{ color: 'var(--color-primary)' }}
+            >
+              View Full Experience →
+            </Link>
+          </div>
         </div>
       </section>
 

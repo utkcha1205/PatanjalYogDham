@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import ProgramCard from '@/components/ProgramCard';
+import { AnimatedSection } from '@/components/AnimatedWrappers';
 import { programs } from '@/data/programs';
 import { siteMetadata } from '@/data/siteMetadata';
 
@@ -18,56 +20,98 @@ export const metadata: Metadata = {
   },
 };
 
-const categoryLabels: Record<string, string> = {
-  beginner: 'Beginner',
-  intermediate: 'Intermediate',
-  advanced: 'Advanced',
+const programImages: Record<string, string> = {
+  'beginner-yoga': '/images/hero/yoga-terrace.png',
+  'gentle-morning-flow': '/images/hero/ganges-sunrise.png',
+  'intermediate-asana': '/images/gallery/patanjal-2.jpg',
+  'pranayama-meditation': '/images/gallery/wellness-retreat.png',
+  'advanced-yoga-sadhana': '/images/facility/yoga-hall.png',
 };
 
-const categoryOrder = ['beginner', 'intermediate', 'advanced'] as const;
-
 export default function ProgramsPage() {
-  const grouped = Object.groupBy(programs, (p) => p.category);
-
   return (
     <>
-      <section className="bg-amber-50 py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-amber-900">
-            Our Programs
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-amber-800">
-            From gentle introductions to intensive sadhana, find the practice
-            that meets you where you are.
-          </p>
+      {/* Hero */}
+      <section className="py-[120px] text-center relative overflow-hidden">
+        {/* Decorative circles */}
+        <div
+          className="pulse-glow absolute top-20 -left-20 h-64 w-64 rounded-full blur-3xl"
+          style={{ background: 'var(--color-primary-container)', opacity: 0.15 }}
+        />
+        <div
+          className="pulse-glow absolute bottom-20 -right-20 h-48 w-48 rounded-full blur-3xl"
+          style={{ background: 'var(--color-secondary-container)', opacity: 0.3, animationDelay: '2.5s' }}
+        />
+        <div className="mx-auto max-w-[1280px] px-8 relative">
+          <AnimatedSection>
+            <p className="label-md" style={{ color: 'var(--color-primary)' }}>Sacred Learning</p>
+            <h1 className="display-lg mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              Our Programs &amp; Retreats
+            </h1>
+            <p className="body-lg mt-6 max-w-2xl mx-auto" style={{ color: 'var(--color-on-surface-variant)' }}>
+              From gentle introductions to intensive sadhana, find the practice
+              that meets you where you are.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
-      {categoryOrder.map((cat) => {
-        const items = grouped[cat];
-        if (!items || items.length === 0) return null;
-        return (
-          <section key={cat} className="py-16">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold tracking-tight text-amber-900">
-                {categoryLabels[cat]}
-              </h2>
-              <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((program) => (
-                  <ProgramCard
-                    key={program.id}
-                    name={program.name}
-                    description={program.description}
-                    duration={program.duration}
-                    schedule={program.schedule}
-                    category={program.category}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      {/* Programs Grid */}
+      <section className="pb-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {programs.map((program, i) => (
+              <AnimatedSection key={program.id} variant="from-bottom" delay={i * 120}>
+              <ProgramCard
+                name={program.name}
+                description={program.description}
+                duration={program.duration}
+                schedule={program.schedule}
+                category={program.category}
+                image={programImages[program.id]}
+              />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section
+        className="py-[120px] text-center"
+        style={{ background: 'var(--color-secondary-container)' }}
+      >
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimatedSection variant="scale-up">
+            <h2 className="headline-xl" style={{ color: 'var(--color-on-surface)' }}>
+              Unsure which path to choose?
+            </h2>
+          <p className="body-lg mt-4 max-w-xl mx-auto" style={{ color: 'var(--color-on-surface-variant)' }}>
+            Let our experienced teachers guide you to the right program based on your goals and experience level.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-full px-8 py-3.5 font-semibold text-white"
+              style={{ background: 'var(--color-primary-container)' }}
+            >
+              Schedule a Consultation
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-full px-8 py-3.5 font-semibold"
+              style={{
+                background: 'white',
+                color: 'var(--color-primary)',
+                border: '1px solid var(--color-outline-variant)',
+              }}
+            >
+              Download Brochure
+            </Link>
+          </div>
+          </AnimatedSection>
+        </div>
+      </section>
     </>
   );
 }

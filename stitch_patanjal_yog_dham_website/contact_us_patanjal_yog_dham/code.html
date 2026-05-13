@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "primary-fixed-dim": "#ffb95f",
+                  "background": "#fff8f4",
+                  "on-secondary-container": "#6a6341",
+                  "on-background": "#221a12",
+                  "on-secondary-fixed": "#201c02",
+                  "secondary-fixed-dim": "#d1c79d",
+                  "surface": "#fff8f4",
+                  "surface-container-highest": "#f0e0d1",
+                  "on-primary-container": "#613b00",
+                  "on-error": "#ffffff",
+                  "on-tertiary-fixed": "#001e2d",
+                  "on-tertiary": "#ffffff",
+                  "surface-tint": "#855300",
+                  "surface-dim": "#e7d7c9",
+                  "primary-container": "#f59e0b",
+                  "on-primary": "#ffffff",
+                  "on-tertiary-container": "#004966",
+                  "primary-fixed": "#ffddb8",
+                  "inverse-on-surface": "#feeedf",
+                  "secondary-container": "#eae0b5",
+                  "surface-variant": "#f0e0d1",
+                  "inverse-primary": "#ffb95f",
+                  "on-surface-variant": "#534434",
+                  "tertiary": "#00658b",
+                  "on-error-container": "#93000a",
+                  "tertiary-fixed": "#c5e7ff",
+                  "surface-container-low": "#fff1e5",
+                  "error-container": "#ffdad6",
+                  "outline-variant": "#d8c3ad",
+                  "on-tertiary-fixed-variant": "#004c6a",
+                  "on-surface": "#221a12",
+                  "on-secondary-fixed-variant": "#4d4727",
+                  "surface-container-high": "#f5e6d7",
+                  "inverse-surface": "#382f25",
+                  "tertiary-fixed-dim": "#7fd0ff",
+                  "on-secondary": "#ffffff",
+                  "on-primary-fixed": "#2a1700",
+                  "surface-bright": "#fff8f4",
+                  "error": "#ba1a1a",
+                  "secondary-fixed": "#ede3b8",
+                  "primary": "#855300",
+                  "surface-container-lowest": "#ffffff",
+                  "outline": "#867461",
+                  "on-primary-fixed-variant": "#653e00",
+                  "secondary": "#665f3d",
+                  "tertiary-container": "#1abdff",
+                  "surface-container": "#fbebdd"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "section-padding-mobile": "64px",
+                  "container-max": "1280px",
+                  "gutter": "32px",
+                  "base": "8px",
+                  "stack-sm": "16px",
+                  "section-padding-desktop": "120px",
+                  "stack-md": "32px",
+                  "stack-lg": "64px"
+          },
+          "fontFamily": {
+                  "headline-lg-mobile": ["Geist Sans"],
+                  "body-lg": ["Geist Sans"],
+                  "label-md": ["Geist Sans"],
+                  "headline-lg": ["Geist Sans"],
+                  "display-lg": ["Geist Sans"],
+                  "body-md": ["Geist Sans"],
+                  "headline-xl": ["Geist Sans"]
+          },
+          "fontSize": {
+                  "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                  "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                  "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                  "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .spiritual-shadow {
+      box-shadow: 0 20px 50px -12px rgba(133, 83, 0, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center max-w-[1280px] mx-auto px-8 py-4">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">Patanjal Yoga Dham</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Programs</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform">
+        Join Now
+      </button>
+</nav>
+</header>
+<main class="max-w-[1280px] mx-auto px-8">
+<!-- Hero Header -->
+<section class="pt-24 pb-16 text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Connect with Your Inner Peace</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Have questions about our yoga retreats or programs? Reach out to us. We are here to guide your journey towards spiritual enlightenment in the heart of Haridwar.</p>
+</section>
+<!-- Main Contact Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-stack-lg">
+<!-- Contact Form Container -->
+<div class="lg:col-span-7 bg-surface-container-low p-10 md:p-12 rounded-[2rem] spiritual-shadow">
+<h2 class="font-headline-xl text-headline-xl mb-8 text-on-surface">Send a Message</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-1">Name</label>
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container text-body-md placeholder:text-outline-variant" placeholder="Your full name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-1">Email</label>
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container text-body-md placeholder:text-outline-variant" placeholder="Email address" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-1">Phone</label>
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container text-body-md placeholder:text-outline-variant" placeholder="Mobile number" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-1">Message</label>
+<textarea class="w-full bg-surface-container border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container text-body-md placeholder:text-outline-variant resize-none" placeholder="How can we help you on your spiritual journey?" rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-5 rounded-xl hover:bg-on-primary-fixed-variant transition-all duration-300 transform active:scale-[0.98]" type="submit">
+            Send Message
+          </button>
+</form>
+</div>
+<!-- Info Sidebar -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Contact Details -->
+<div class="bg-surface-container-high p-8 rounded-[2rem] spiritual-shadow">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-8">Contact Details</h3>
+<ul class="space-y-8">
+<li class="flex items-start gap-4">
+<div class="bg-primary-container/20 p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Address</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Arya Nagar, Haridwar,<br/>Uttarakhand 249407, India</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary-container/20 p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Phone</p>
+<p class="font-body-md text-body-md text-on-surface-variant">+91 98765 43210</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary-container/20 p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Email</p>
+<p class="font-body-md text-body-md text-on-surface-variant">info@patanjalyogdham.org</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Operating Hours -->
+<div class="bg-secondary-container p-8 rounded-[2rem] spiritual-shadow relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10 text-on-secondary-container" data-icon="schedule">schedule</span>
+<h3 class="font-headline-lg text-headline-lg text-on-secondary-container mb-4">Operating Hours</h3>
+<p class="font-label-md text-label-md text-on-secondary-container opacity-80 uppercase mb-2">Open Daily</p>
+<p class="font-display-lg text-[40px] text-on-secondary-container font-semibold">5:00 AM – 8:00 PM</p>
+<p class="mt-4 font-body-md text-on-secondary-container/80">Experience the morning aarti and evening meditation sessions.</p>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="mb-section-padding-desktop">
+<div class="w-full h-[500px] rounded-[3rem] overflow-hidden spiritual-shadow relative group">
+<div class="absolute inset-0 bg-surface-container-highest flex items-center justify-center">
+<img alt="Map of Haridwar" class="w-full h-full object-cover filter grayscale-[0.3] brightness-90 group-hover:scale-105 transition-transform duration-700" data-alt="A serene wide-angle aerial photograph of Haridwar city along the banks of the sacred Ganges River during a soft golden hour. The landscape features historic temples with intricate spires and traditional ghats where spiritual seekers gather. The atmosphere is hazy and ethereal, bathed in warm orange and amber light that creates a peaceful, meditative mood. The entire scene is captured with high-key lighting to maintain a bright, clean, modern spiritual aesthetic." data-location="Haridwar, Uttarakhand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI3_LCdYqu7i9rKcY2pZja7rNuAaGa7kzYejPox7_1zydfvpZigRk0BO21Esp4T_Tn7mYELDgpmEjYlb7wd0fbaSSmBwjNUYITlrakQULdf84naPUkcqKecGmBCzVm2KyU6nGdJdptmVbGPIofF1Ix3xB3hSZDtmBb1ZqBMkSPVT3bmiOJOEuxBMtd97TCxFMVA9Q2eKkLiLzm-wyAVIscFjsIysED93cn1P-h9dTkIMn6YnwAnsrrg-Lp0hM0aIcCsJJ0YBShMOzU"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- Map Overlay UI -->
+<div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-sm">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">Haridwar Location</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Located near the banks of the Ganges, offering a perfect environment for yoga and meditation.</p>
+<a class="mt-4 inline-flex items-center text-primary font-label-md hover:underline" href="#">
+              Open in Google Maps
+              <span class="material-symbols-outlined text-sm ml-1" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-surface-container dark:bg-surface-container-high">
+<div class="max-w-[1280px] mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<div class="space-y-4">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim">Patanjal Yog Dham</div>
+<p class="text-on-surface-variant font-body-md text-body-md pr-8">
+          Dedicated to preserving the ancient wisdom of Patanjali Yoga in the sacred land of Haridwar.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-3">
+<h4 class="font-label-md text-label-md text-primary">Explore</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Programs</a>
+</nav>
+</div>
+<div class="space-y-3 pt-8">
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-primary font-semibold transition-all" href="#">Contact</a>
+</nav>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary">Newsletter</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Join our spiritual community for weekly enlightenment.</p>
+<div class="flex">
+<input class="bg-surface border-none rounded-l-xl px-4 py-2 w-full focus:ring-1 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-xl opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 pb-8 flex flex-col md:flex-row justify-between items-center border-t border-outline-variant pt-8 text-on-surface-variant font-body-md text-sm">
+<p>© 2024 Patanjal Yog Dham. Serenity in Haridwar.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

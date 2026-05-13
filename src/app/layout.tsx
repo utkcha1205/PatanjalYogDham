@@ -32,10 +32,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">
-        <header>
+      <body className="min-h-full flex flex-col overflow-x-hidden" style={{ background: '#fff8f4', color: '#221a12' }}>
+        <header className="sticky top-0 z-50">
           <Navbar />
         </header>
         <main className="flex-1">{children}</main>

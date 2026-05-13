@@ -14,17 +14,29 @@ export default function TeamMemberCard({
   image,
 }: TeamMemberCardProps) {
   return (
-    <article className="rounded-xl bg-white p-6 shadow-sm ring-1 ring-amber-100 text-center">
-      <Image
-        src={image}
-        alt={`Photo of ${name}`}
-        width={160}
-        height={160}
-        className="mx-auto h-40 w-40 rounded-full object-cover"
-      />
-      <h3 className="mt-4 text-xl font-semibold text-amber-900">{name}</h3>
-      <p className="text-sm font-medium text-amber-700">{role}</p>
-      <p className="mt-3 text-sm leading-relaxed text-amber-800">{bio}</p>
+    <article
+      className="group rounded-3xl overflow-hidden elevation-1 soft-lift"
+      style={{ background: 'white', border: '1px solid var(--color-outline-variant)' }}
+    >
+      <div className="relative h-64 overflow-hidden">
+        <Image
+          src={image}
+          alt={`Photo of ${name}`}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-8 text-center">
+        <h3 className="text-xl font-semibold" style={{ color: 'var(--color-on-surface)' }}>
+          {name}
+        </h3>
+        <p className="text-sm font-medium mt-1" style={{ color: 'var(--color-primary)' }}>
+          {role}
+        </p>
+        <p className="mt-3 body-md" style={{ color: 'var(--color-on-surface-variant)' }}>
+          {bio}
+        </p>
+      </div>
     </article>
   );
 }

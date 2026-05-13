@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Patanjal Yoga Dham</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb95f",
+                        "background": "#fff8f4",
+                        "on-secondary-container": "#6a6341",
+                        "on-background": "#221a12",
+                        "on-secondary-fixed": "#201c02",
+                        "secondary-fixed-dim": "#d1c79d",
+                        "surface": "#fff8f4",
+                        "surface-container-highest": "#f0e0d1",
+                        "on-primary-container": "#613b00",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#001e2d",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#855300",
+                        "surface-dim": "#e7d7c9",
+                        "primary-container": "#f59e0b",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#004966",
+                        "primary-fixed": "#ffddb8",
+                        "inverse-on-surface": "#feeedf",
+                        "secondary-container": "#eae0b5",
+                        "surface-variant": "#f0e0d1",
+                        "inverse-primary": "#ffb95f",
+                        "on-surface-variant": "#534434",
+                        "tertiary": "#00658b",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#c5e7ff",
+                        "surface-container-low": "#fff1e5",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#d8c3ad",
+                        "on-tertiary-fixed-variant": "#004c6a",
+                        "on-surface": "#221a12",
+                        "on-secondary-fixed-variant": "#4d4727",
+                        "surface-container-high": "#f5e6d7",
+                        "inverse-surface": "#382f25",
+                        "tertiary-fixed-dim": "#7fd0ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#2a1700",
+                        "surface-bright": "#fff8f4",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ede3b8",
+                        "primary": "#855300",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#867461",
+                        "on-primary-fixed-variant": "#653e00",
+                        "secondary": "#665f3d",
+                        "tertiary-container": "#1abdff",
+                        "surface-container": "#fbebdd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding-mobile": "64px",
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "base": "8px",
+                        "stack-sm": "16px",
+                        "section-padding-desktop": "120px",
+                        "stack-md": "32px",
+                        "stack-lg": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"],
+                        "label-md": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "display-lg": ["Geist Sans"],
+                        "body-md": ["Geist Sans"],
+                        "headline-xl": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .gallery-grid {
+            column-count: 1;
+            column-gap: 32px;
+        }
+        @media (min-width: 768px) {
+            .gallery-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .gallery-grid { column-count: 3; }
+        }
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 32px;
+        }
+        .spiritual-shadow {
+            box-shadow: 0 20px 50px -12px rgba(133, 83, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center max-w-[1280px] mx-auto px-8 py-4">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">
+                Patanjal Yoga Dham
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Programs</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform">
+                Join Now
+            </button>
+</nav>
+</header>
+<main class="max-w-[1280px] mx-auto px-8 py-section-padding-desktop">
+<!-- Hero Section for Gallery -->
+<section class="text-center mb-stack-lg">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-4 block">Visual Journey</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">Moments of Serenity</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Explore the stillness and spiritual energy captured at our Haridwar ashram. A sanctuary for the soul, reflected in every frame.
+            </p>
+</section>
+<!-- Gallery Grid -->
+<div class="gallery-grid">
+<!-- Image 8 - Hero Style -->
+<div class="gallery-item group cursor-pointer">
+<div class="relative overflow-hidden rounded-3xl spiritual-shadow transition-all duration-500 hover:-translate-y-1">
+<img alt="Ganges Sunrise" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEbdphLgnXIC9X_X7T4P7m7Y_ueAoqnDHyP9TMi5K_McTUif3c_X0rGdLUrivbDOOKWlYIC-YfClm1OP0j09aeec1df7QYmLR4RN-tEsYdwpIBDxduA12TgTICEpqwu8DGF9rpd0KY7uAJuGGT187FK-s8bY5pFFuq-DaOCXhHQxWb8y2bVYDRL48CbQ8_ok4A-RUwoSUYrvwkKn8flMELztzElXJSs8BdOfpLLcTMVMFreytw266V3uv_Ax29Rp4w276VpiIXy2i6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<p class="text-white font-label-md text-label-md">Sunrise at the Ganges</p>
+</div>
+</div>
+</div>
+<!-- Image 7 - Portrait -->
+<div class="gallery-item group cursor-pointer">
+<div class="relative overflow-hidden rounded-3xl spiritual-shadow transition-all duration-500 hover:-translate-y-1">
+<img alt="Yoga Guru" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV8uK-nE99cmVyPbX9yelCW9INhhd7GWFV8Xomfuv5G2NWWtS9BDgKKKS5A-DrPbrRxAyNZ7bkctEK7bfL1WuC84Skrik-ru867C0UHoHnrJFHdFvUOMk6f3u9NmfwCaANpmTXXYd8hY6_RRysi7n8XTap3V9JSD9Y-lvzdGRxuFsyyfPHzRGv5r3PgX87fNy_VsJGpmoKqoMqS_TcOyMNGqH9ylhIIkKZCy-nuCN_qUAdra4JfMKfIg8wXDbClX6BHdG1ulLYQdfA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<p class="text-white font-label-md text-label-md">Spiritual Guidance</p>
+</div>
+</div>
+</div>
+<!-- Image 6 - Terrace Group -->
+<div class="gallery-item group cursor-pointer">
+<div class="relative overflow-hidden rounded-3xl spiritual-shadow transition-all duration-500 hover:-translate-y-1">
+<img alt="Ganges Yoga" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9c4aAhZAx0ZFMiiIbOq3f6yoysA7xGhnPnbVINLOcpnsVBaGhL0v1puPm7Q2hxh54x6Cj6FtpYUPkB_rJWBIqcR_d5G8BgRMMGnubG8IygdsDhurJShPVrOYFlJ2ApIpy4ZpFReNLVT6Ebr0eV8Cy6JES-smj2Ec3dJw3196321tIgdW_jgn4tApKhLKxiqyPtoDMSHSxTlfoB9l5VScBWXq8Y916OETeisRJTg4CpJ7TMYISzVX70kSgU549vCVWuqCiDQf9t54f"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<p class="text-white font-label-md text-label-md">Morning Sadhana</p>
+</div>
+</div>
+</div>
+<!-- Image 4 - Ashram Interior -->
+<div class="gallery-item group cursor-pointer">
+<div class="relative overflow-hidden rounded-3xl spiritual-shadow transition-all duration-500 hover:-translate-y-1">
+<img alt="Ashram Hall" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1vhM9eTFIXJvlCqo_ESvD03agvmVZPNqWivBZxnadCBmBp7k3FDfGG5wZVie-f2Qp8vjL14zoZ4bKNLoQAMGxKpQKPAwLrEvN6fbRgzzMg0nsVA48DNjOA3GQ_Qtouedfbx5XtT74PfdU8C2pro039mZeglQPxbPKDE0hyYWE1mpHV1h90IiewKaMM0nSJj8qJ_-UCArNkPt1gFBzHP4yyiyhQ98Uyfqrti1TOfZzwodh6EdtlvSa5jLPAg8OaBSVu4GPgbnNewi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<p class="text-white font-label-md text-label-md">Sacred Space</p>
+</div>
+</div>
+</div>
+<!-- Image 9 - Wellness Details -->
+<div class="gallery-item group cursor-pointer">
+<div class="relative overflow-hidden rounded-3xl spiritual-shadow transition-all duration-500 hover:-translate-y-1">
+<img alt="Wellness Retreat" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDFkE8Y5ioluSoWARZN3Ll0jMaBwKLSs-SU7F6vVZCKTaxgWdkJpvejzAB7Mg5IoBICvqqphLXJRLE0ek-W948Lxtar40m9tbV15MtttzBL_yP7AcEVCWw1dLcDkgBiBu6UYco3zI8qjUXuBQU26H9JbY4Me0Zpl7ffTzPNYwrDVLrlGF_yPDwqRvUw8GYZ_7ug1T2Tmu0UPAfLGZlzxirPySYtvPIRoeovwLnfcxzQJO3lpID1wfHX8Yr8YAXGwVWjNztUlp8GeL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<p class="text-white font-label-md text-label-md">Natural Elements</p>
+</div>
+</div>
+</div>
+<!-- Decorative Quote Block -->
+<div class="gallery-item">
+<div class="bg-secondary-container rounded-3xl p-10 flex flex-col items-center justify-center text-center spiritual-shadow">
+<span class="material-symbols-outlined text-primary text-6xl mb-6 opacity-40">format_quote</span>
+<p class="font-headline-lg text-headline-lg italic text-on-secondary-container mb-4">"Yoga is the journey of the self, through the self, to the self."</p>
+<cite class="font-label-md text-label-md text-primary uppercase">The Bhagavad Gita</cite>
+</div>
+</div>
+</div>
+<!-- Lightbox Trigger Note -->
+<div class="mt-stack-lg text-center">
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group">
+<span>View Full Experience</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-surface-container dark:bg-surface-container-high">
+<div class="max-w-[1280px] mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim mb-4">Patanjal Yog Dham</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Dedicated to preserving the ancient wisdom of Yoga and meditation on the holy banks of the Ganges.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Navigation</h4>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Programs</a>
+<a class="font-body-md text-body-md text-primary font-semibold transition-all" href="#">Gallery</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Visit Us</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Har ki Pauri Ghat Road,<br/>
+                    Haridwar, Uttarakhand 249401<br/>
+                    India
+                </p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">mail</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">call</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">location_on</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 py-8 border-t border-outline-variant/30 flex justify-between items-center opacity-80">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Patanjal Yog Dham. Serenity in Haridwar.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
+import { AnimatedSection } from '@/components/AnimatedWrappers';
 import { siteMetadata } from '@/data/siteMetadata';
 
 export const metadata: Metadata = {
@@ -21,79 +22,95 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Page heading */}
-      <section className="bg-amber-50 py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-amber-900">
-            Contact Us
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-amber-800">
-            We would love to hear from you. Reach out for enrollment inquiries,
-            visit details, or any questions about our programs.
-          </p>
+      {/* Hero */}
+      <section className="py-[120px] text-center">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimatedSection>
+            <p className="label-md" style={{ color: 'var(--color-primary)' }}>Get In Touch</p>
+            <h1 className="display-lg mt-4" style={{ color: 'var(--color-on-surface)' }}>
+              Connect with Your Inner Peace
+            </h1>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Contact details + form */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Left column — info + map */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold text-amber-900">
-                  Get in Touch
+      {/* Contact Grid — 7/5 */}
+      <section className="pb-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <div className="grid gap-12 lg:grid-cols-12">
+            {/* Form — 7 cols */}
+            <AnimatedSection variant="from-left" className="lg:col-span-7">
+              <div
+                className="rounded-[2rem] p-10 elevation-2"
+                style={{ background: 'white', border: '1px solid var(--color-outline-variant)' }}
+              >
+                <h2 className="headline-lg" style={{ color: 'var(--color-on-surface)' }}>
+                  Send Us a Message
                 </h2>
+                <div className="mt-8">
+                  <ContactForm />
+                </div>
+              </div>
+            </AnimatedSection>
 
-                <dl className="mt-6 space-y-4 text-amber-800">
+            {/* Info — 5 cols */}
+            <AnimatedSection variant="from-right" delay={200} className="lg:col-span-5 space-y-6">
+              {/* Contact Details Card */}
+              <div
+                className="rounded-3xl p-8 elevation-1"
+                style={{ background: 'white', border: '1px solid var(--color-outline-variant)' }}
+              >
+                <h3 className="label-md" style={{ color: 'var(--color-primary)' }}>Contact Details</h3>
+                <dl className="mt-6 space-y-5">
                   <div>
-                    <dt className="font-semibold text-amber-900">Address</dt>
-                    <dd>{siteMetadata.address}</dd>
+                    <dt className="text-sm font-semibold" style={{ color: 'var(--color-on-surface)' }}>📍 Address</dt>
+                    <dd className="body-md mt-1" style={{ color: 'var(--color-on-surface-variant)' }}>
+                      {siteMetadata.address}
+                    </dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-amber-900">Phone</dt>
-                    <dd>
-                      <a
-                        href={`tel:${siteMetadata.phone}`}
-                        className="hover:text-amber-600 transition-colors"
-                      >
+                    <dt className="text-sm font-semibold" style={{ color: 'var(--color-on-surface)' }}>📞 Phone</dt>
+                    <dd className="body-md mt-1">
+                      <a href={`tel:${siteMetadata.phone}`} className="hover:opacity-80" style={{ color: 'var(--color-primary)' }}>
                         {siteMetadata.phone}
                       </a>
                     </dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-amber-900">Email</dt>
-                    <dd>
-                      <a
-                        href={`mailto:${siteMetadata.email}`}
-                        className="hover:text-amber-600 transition-colors"
-                      >
+                    <dt className="text-sm font-semibold" style={{ color: 'var(--color-on-surface)' }}>✉️ Email</dt>
+                    <dd className="body-md mt-1">
+                      <a href={`mailto:${siteMetadata.email}`} className="hover:opacity-80" style={{ color: 'var(--color-primary)' }}>
                         {siteMetadata.email}
                       </a>
                     </dd>
                   </div>
-                  <div>
-                    <dt className="font-semibold text-amber-900">
-                      Operating Hours
-                    </dt>
-                    <dd>{siteMetadata.operatingHours}</dd>
-                  </div>
                 </dl>
               </div>
 
-              <MapEmbed />
-            </div>
-
-            {/* Right column — contact form */}
-            <div>
-              <h2 className="text-2xl font-bold text-amber-900">
-                Send Us a Message
-              </h2>
-              <div className="mt-6">
-                <ContactForm />
+              {/* Operating Hours Card */}
+              <div
+                className="rounded-3xl p-8"
+                style={{ background: 'var(--color-secondary-container)' }}
+              >
+                <h3 className="label-md" style={{ color: 'var(--color-primary)' }}>Operating Hours</h3>
+                <p className="body-lg mt-4 font-semibold" style={{ color: 'var(--color-on-surface)' }}>
+                  {siteMetadata.operatingHours}
+                </p>
+                <p className="body-md mt-2" style={{ color: 'var(--color-on-surface-variant)' }}>
+                  We welcome walk-ins and scheduled visits alike.
+                </p>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="pb-[120px]">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <AnimatedSection variant="scale-up">
+            <MapEmbed />
+          </AnimatedSection>
         </div>
       </section>
     </>
